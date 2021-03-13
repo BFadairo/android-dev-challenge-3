@@ -66,6 +66,6 @@ val typography = Typography(
         fontFamily = Montserrat,
         fontWeight = FontWeight.Bold,
         fontSize = 13.sp,
-        letterSpacing = 1.25.em
+//        letterSpacing = 1.25.em
     )
 )
