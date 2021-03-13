@@ -22,6 +22,8 @@ import androidx.compose.material.ButtonDefaults
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
+import com.example.androiddevchallenge.ui.components.OutlinedWeTradeButton
+import com.example.androiddevchallenge.ui.components.WeTradeButton
 
 @Composable
 fun WelcomeContent() {
@@ -46,58 +48,19 @@ fun WelcomeContent() {
                 .align(Alignment.BottomCenter)
                 .padding(16.dp, 16.dp, 16.dp, 32.dp)
         ) {
-            Button(onClick = { /*TODO*/ },
-                shape = CircleShape,
+            WeTradeButton(
+                title = stringResource(id = R.string.welcome_get_started),
                 modifier = Modifier
-                    .weight(1f)
                     .height(48.dp)
-            )
-            {
-                Text(stringResource(R.string.welcome_getting_started), style = MaterialTheme.typography.button)
-            }
+                    .weight(1f),
+                onClickAction = { /*TODO*/ })
             Spacer(modifier = Modifier.width(8.dp))
-            OutlinedButton(onClick = { /*TODO*/ },
-                shape = CircleShape,
+            OutlinedWeTradeButton(
+                title = stringResource(id = R.string.welcome_log_in),
+                modifier = Modifier.height(48.dp).weight(1f),
                 border = BorderStroke(1.dp, Color.Yellow),
-                modifier = Modifier
-                    .height(48.dp)
-                    .weight(1f))
-            {
-                Text(stringResource(R.string.welcome_log_in), style = MaterialTheme.typography.button)
-            }
-//            WeTradeButton(
-//                title = "Get Started",
-//                modifier = Modifier
-//                    .weight(1f)
-//                    .background(MaterialTheme.colors.primary),
-//                onClickAction = { /*TODO*/ })
-//            OutlinedWeTradeButton(
-//                title = "Log In",
-//                modifier = Modifier.weight(1f)
-//            )
+                onClickAction = { /*TODO*/ })
         }
-    }
-}
-
-@Composable
-fun WeTradeButton(
-    title: String,
-    modifier: Modifier,
-    onClickAction: () -> Unit
-) {
-    Button(onClick = { /*TODO*/ }, modifier = modifier) {
-        Text(text = title)
-    }
-}
-
-@Composable
-fun OutlinedWeTradeButton(title: String, modifier: Modifier) {
-    OutlinedButton(
-        onClick = { /*TODO*/ },
-        border = BorderStroke(1.dp, Color.Yellow),
-        modifier = modifier
-    ) {
-        Text(text = title)
     }
 }
 
