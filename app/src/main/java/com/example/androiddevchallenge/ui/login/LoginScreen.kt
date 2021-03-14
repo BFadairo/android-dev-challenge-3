@@ -29,6 +29,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.ui.components.WeTradeButton
+import java.time.format.TextStyle
 
 
 @Composable
@@ -81,10 +82,12 @@ fun InfoInput() {
     var passwordInput by remember { mutableStateOf("") }
     Spacer(modifier = Modifier.height(40.dp))
     Column(
-        Modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+        Modifier.fillMaxWidth().padding(horizontal = 16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         OutlinedTextField(
             value = emailInput,
             onValueChange = { emailInput = it },
+            textStyle = MaterialTheme.typography.body1,
+            modifier = Modifier.fillMaxWidth(),
             label = { Text("Email Address") },
             leadingIcon = { Icon(Icons.Default.MailOutline, "Mail Outline") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
@@ -92,7 +95,9 @@ fun InfoInput() {
         Spacer(modifier = Modifier.height(8.dp))
         OutlinedTextField(
             value = passwordInput,
+            textStyle = MaterialTheme.typography.body1,
             onValueChange = { passwordInput = it },
+            modifier = Modifier.fillMaxWidth(),
             label = { Text("Password") },
             leadingIcon = { Icon(Icons.Default.Password, "Password Icon") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
@@ -116,7 +121,7 @@ fun InfoInputPreview() {
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, widthDp = 360, heightDp = 640)
 @Composable
 fun DefaultPreview() {
     MyTheme {
