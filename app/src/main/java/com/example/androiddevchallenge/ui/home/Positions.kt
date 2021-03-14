@@ -52,9 +52,12 @@ fun PositionContent() {
 
 @Composable
 fun PositionsList(positions: List<Position>) {
-    LazyColumn {
-        items(positions) { position ->
-            PositionItem(position = position)
+    Column(verticalArrangement = Arrangement.Center, modifier = Modifier) {
+        Text(text = "Positions", style = MaterialTheme.typography.subtitle1, modifier = Modifier.align(Alignment.CenterHorizontally))
+        LazyColumn {
+            items(positions) { position ->
+                PositionItem(position = position)
+            }
         }
     }
 }
@@ -63,10 +66,8 @@ fun PositionsList(positions: List<Position>) {
 fun PositionItem(position: Position){
     val image = painterResource(id = position.chart)
     val percentColor = if (position.percentChange < 0f) Color.Red; else Color.Green
-//    val price = if (position.price % 1 != 0f) position.price; else position.price.toInt()
     val convertedPrice = if (position.price % 1 != 0f) DecimalFormat("#.###").format(position.price).toString(); else NumberFormat.getInstance().format(position.price.toDouble()).toString()
-    val price = if (position.price % 1 != 0f) String.format("$%a", position.price); else String.format("{0:n0}", position.price)
-    Divider(modifier = Modifier.height(2.dp))
+    Divider(modifier = Modifier.height(1.dp).padding(start = 16.dp, end = 16.dp))
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -75,7 +76,8 @@ fun PositionItem(position: Position){
         Column(
             Modifier
                 .padding(start = 16.dp)
-                .weight(.2f)) {
+                .weight(.2f)
+                .align(Alignment.CenterVertically)) {
             Text(text = "$${convertedPrice}", style = MaterialTheme.typography.body1)
             Text(text = "${position.percentChange}%", style = MaterialTheme.typography.body1, color = percentColor)
         }
