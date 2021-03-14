@@ -36,15 +36,15 @@ import java.time.format.TextStyle
 fun LoginScreen() {
     Surface(modifier = Modifier.background(Color.White)) {
         Column(modifier = Modifier.fillMaxSize()) {
-            Greeting()
-            InfoInput()
+            LoginContent()
         }
     }
 }
 
 @Composable
 fun LoginContent() {
-
+    Greeting()
+    InfoInput()
 }
 
 
@@ -77,7 +77,9 @@ fun InfoInput() {
     var passwordInput by remember { mutableStateOf("") }
     Spacer(modifier = Modifier.height(40.dp))
     Column(
-        Modifier.fillMaxWidth().padding(horizontal = 16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+        Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         OutlinedTextField(
             value = emailInput,
             onValueChange = { emailInput = it },
