@@ -27,6 +27,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import com.example.androiddevchallenge.ui.components.welcome.WelcomeContent
+import com.example.androiddevchallenge.ui.home.PositionsList
+import com.example.androiddevchallenge.ui.home.PositionsScreen
+import com.example.androiddevchallenge.ui.home.positions
 import com.example.androiddevchallenge.ui.login.LoginScreen
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
@@ -51,7 +54,8 @@ fun StatusBar() {
 fun MyApp() {
     Surface(color = MaterialTheme.colors.background, modifier = Modifier.fillMaxSize()) {
 //        WelcomeContent()
-        LoginScreen()
+//        LoginScreen()
+        PositionsScreen()
     }
 }
 

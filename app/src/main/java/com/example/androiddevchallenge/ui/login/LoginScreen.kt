@@ -5,6 +5,7 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
@@ -122,7 +123,17 @@ fun InfoInputPreview() {
 @Composable
 fun DefaultPreview() {
     MyTheme {
-        Surface(modifier = Modifier.background(Color.White)) {
+        Surface() {
+            LoginScreen()
+        }
+    }
+}
+
+@Preview(showBackground = true, widthDp = 360, heightDp = 640)
+@Composable
+fun DarkPreview() {
+    MyTheme(darkTheme = true) {
+        Surface() {
             LoginScreen()
         }
     }
