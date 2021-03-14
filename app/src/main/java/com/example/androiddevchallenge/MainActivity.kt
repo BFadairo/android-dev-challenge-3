@@ -25,7 +25,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
 import com.example.androiddevchallenge.ui.components.welcome.WelcomeContent
+import com.example.androiddevchallenge.ui.login.LoginScreen
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
@@ -48,7 +50,8 @@ fun StatusBar() {
 @Composable
 fun MyApp() {
     Surface(color = MaterialTheme.colors.background, modifier = Modifier.fillMaxSize()) {
-        WelcomeContent()
+//        WelcomeContent()
+        LoginScreen()
     }
 }
 

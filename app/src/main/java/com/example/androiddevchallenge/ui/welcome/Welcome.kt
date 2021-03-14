@@ -22,6 +22,7 @@ import androidx.compose.material.ButtonDefaults
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
+import androidx.navigation.compose.rememberNavController
 import com.example.androiddevchallenge.ui.components.OutlinedWeTradeButton
 import com.example.androiddevchallenge.ui.components.WeTradeButton
 
@@ -57,7 +58,9 @@ fun WelcomeContent() {
             Spacer(modifier = Modifier.width(8.dp))
             OutlinedWeTradeButton(
                 title = stringResource(id = R.string.welcome_log_in),
-                modifier = Modifier.height(48.dp).weight(1f),
+                modifier = Modifier
+                    .height(48.dp)
+                    .weight(1f),
                 border = BorderStroke(1.dp, Color.Yellow),
                 onClickAction = { /*TODO*/ })
         }
