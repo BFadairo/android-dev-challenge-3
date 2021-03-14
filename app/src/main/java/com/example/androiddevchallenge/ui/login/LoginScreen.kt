@@ -61,16 +61,11 @@ fun Greeting() {
         )
         Column(modifier = Modifier.align(Alignment.Center)) {
             Text(
-                text = "Welcome",
+                text = "Welcome back",
                 style = MaterialTheme.typography.h2,
+                textAlign = TextAlign.Center,
                 color = Color.White,
-                modifier = Modifier
-            )
-            Text(
-                text = "back",
-                style = MaterialTheme.typography.h2,
-                color = Color.White,
-                modifier = Modifier
+                modifier = Modifier.width(200.dp)
             )
         }
     }
